@@ -1,6 +1,25 @@
 # Raw-Data-to-KPI
 
-⭐ **1. Introduction**
+[Data Analysis Tool] End-to-end pipeline for converting raw vehicle telemetry data into operational challenge and powertrain performance KPIs.
+
+---
+
+# Contents
+
+⭐ [ 1. Introduction](#-1-introduction) <br>
+🧩 [ 2. Challenge](#-2-challenge) <br>
+🎯 [ 3. Objectives](#-3-objectives) <br>
+🛠  [ 4. Tech Stack](#-4-tech-stack) <br>
+🧠  [ 5. Challenge Factor - Implementation](#-5-challenge-factor-cf---implementation-and-visualizations) <br>
+🧠  [ 6. Engine Map Penalty - Implementation](#-6-local-engine-map-penalty-lemp---implementation-and-visualizations) <br>
+📊  [ 7. Project Outcomes - Key Numbers](#-7-project-outcomes---key-numbers) <br>
+🧭  [ 8. Future Extensions](#-8-future-extensions) <br>
+⚠️  [ 9. Data Note](#%EF%B8%8F-9-data-note) <br>
+👨‍💻  [ 10. Skills Demonstrated](#%E2%80%8D-10-skills-demonstrated) <br>
+
+---
+
+# ⭐ **1. Introduction**
 
 Modern trucks generate large-scale telematics data (Payload, Velocity, Gradient, Engine Parameters) that is highly informative but not directly usable for analytics or cross comparison between trucks due to differences in driver usage, operating conditions 
 and powertrain configurations.
@@ -17,7 +36,7 @@ This project builds a structured analytics pipeline that converts raw engine tel
 </table>
 
 ---
-🧩 **2. Challenge**
+# 🧩 **2. Challenge**
 
 Key challenges addressed in this pipeline include:
 
@@ -28,7 +47,7 @@ Key challenges addressed in this pipeline include:
 
 ---
 
-🎯 **3. Objectives**
+# 🎯 **3. Objectives**
 
 The 2 main objectives of this project include 
 - KPI 1 (Challenge Factor) - Develop a KPI called Challenge Factor (CF) which indicates how difficult the operating condition is for the vehicle i.e. payload and road gradient.
@@ -42,7 +61,7 @@ or road gradient. Simple averages are not sufficient, since trucks may experienc
 
 ---
 
-🛠 **4. Tech Stack**
+# 🛠 **4. Tech Stack**
 
 - Apache Spark (PySpark) – core engine for distributed processing of high-volume telemetry, grid construction, joins, and KPI aggregation
 - Pandas / NumPy – local transformations for binning logic, interpolation, and validation steps on engine map data
@@ -52,7 +71,7 @@ or road gradient. Simple averages are not sufficient, since trucks may experienc
 
 ---
 
-🧠 **5. Challenge Factor (CF) - Implementation and Visualizations**
+# 🧠 **5. Challenge Factor (CF) - Implementation and Visualizations**
 
 - **Wasserstein Distance** - Measures distributional differences between truck operating spectra to build a meaningful pairwise distance matrix.
 - **Multi Dimensional Scaling (MDS)** - Projects high-dimensional distance relationships into a 3D embedding while preserving relative structure.
@@ -108,7 +127,7 @@ How to use this KPI?
 
 ---
 
-🧠 **6. Local Engine Map Penalty (LEMP) - Implementation and Visualizations**
+# 🧠 **6. Local Engine Map Penalty (LEMP) - Implementation and Visualizations**
 
 - **Specific Fuel Consumption (g/ kWh)** - Fuel required to generate a unit of engine power; lower values indicate higher efficiency.
 - **Engine Sweet Spot** - The most fuel-efficient operating point for a given power demand.
@@ -165,7 +184,7 @@ How to use this KPI?
 
 ---
 
-📊 **7. Project Outcomes - Key Numbers**
+# 📊 **7. Project Outcomes - Key Numbers**
 
 This pipeline operates at commercial fleet scale and processes large-scale telematics data:
 
@@ -180,7 +199,7 @@ This pipeline operates at commercial fleet scale and processes large-scale telem
 
 ---
 
-🧭 **8. Future Extensions**
+# 🧭 **8. Future Extensions**
 
 Potential next-stage enhancements for this pipeline include:
  - 🔍 **CF–LEMP joint analysis** - can be used to further explain performance differences between powertrain groups under identical operational conditions by separating operational challenge (CF) from efficiency response (LEMP).
@@ -189,7 +208,7 @@ Potential next-stage enhancements for this pipeline include:
 
 ---
 
-⚠️ **9. Data Note**
+# ⚠️ **9. Data Note**
 
 This project uses proprietary internal datasets from a commercial automotive manufacturer.
 Only the processing pipeline and code structure are shared in this repository for demonstration and learning purposes.
@@ -197,7 +216,7 @@ No raw or sensitive data is included.
 
 ---
 
-👨‍💻 **10. Skills Demonstrated**
+# 👨‍💻 **10. Skills Demonstrated**
 
 - End-to-end statistical KPI design, transforming raw fleet telemetry into interpretable metrics (CF & LEMP).
 - Distance-based machine learning (Wasserstein + MDS) for high-dimensional operational behavior embedding.
